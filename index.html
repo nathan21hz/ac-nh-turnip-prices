@@ -4,22 +4,17 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Animal Crossing Turnip Price Forecaster</title>
-  <meta name="description" content="Animal Crossing Turnip Price Forecaster">
+  <title>动森大头菜价格预测工具</title>
+  <meta name="description" content="动森大头菜价格预测工具">
   <meta name="author" content="Mike Bryant">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162470902-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-162470902-1');
   </script>
 
 </head>
@@ -29,35 +24,35 @@
     <div class="col s12 m5">
       <div class="card-panel z-depth-0">
         <span>
-          To use, enter as much data as you can from <b>your own island</b>. The tool will figure out all possible patterns and predict the lowest and highest prices for each day.
+          请输入<b>你自己岛上</b>尽可能多的数据。本工具将会给出之后每天的价格预测范围。
           <p />
-          I couldn't have done this without <a href="https://twitter.com/_Ninji/status/1244818665851289602?s=20">Ninji's work extracting the code</a>
+          本工具基于 <a href="https://twitter.com/_Ninji/status/1244818665851289602?s=20">Ninji的解包源码</a>
           <p />
-          Support, comments and contributions are available through <a href="https://github.com/mikebryant/ac-nh-turnip-prices/issues">Github</a>
+          原作者<a href="https://github.com/mikebryant/ac-nh-turnip-prices">Github</a>
         </span>
       </div>
     </div>
     <div class="row">
       <div class="col s12">
-        <h5>Probability</h5>
+        <h5>上周</h5>
         <div class="row">
           <div class="col s4">
             <div class="input-field">
               <select id="previous_pattern">
-                <option value="-1" selected>(unknown)</option>
+                <option value="-1" selected>（未知）</option>
                 <!-- Choices are ordered by increasing desirability, not code ID order -->
-                <option value="2">Decreasing</option>
-                <option value="0">Fluctuating</option>
-                <option value="3">Small spike</option>
-                <option value="1">Large spike</option>
+                <option value="2">持续下跌型</option>
+                <option value="0">波动型</option>
+                <option value="3">四期型</option>
+                <option value="1">三期型</option>
               </select>
-              <label for="previous_pattern">Last week’s pattern</label>
+              <label for="previous_pattern">上周走势模式</label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <span>
-                <b>Last week’s pattern</b> affects the probability of patterns for this week. If you know it, select it to see probabilities for this week. <em>(optional)</em>
+                <b>上周的走势</b>会影响本周走势出现的可能性。 <em>（可选）</em>
               </span>
             </div>
           </div>
@@ -66,11 +61,11 @@
     </div>
     <div class="row">
       <div class="col s12">
-        <h5>Daisy Mae</h5>
+        <h5>本周</h5>
         <div class="row">
           <div class="col s2">
             <div class="input-field">
-              <label for="buy">Buy price</label>
+              <label for="buy">买入价</label>
               <input type="number" id="buy">
             </div>
           </div>
@@ -78,15 +73,14 @@
             <div class="input-field">
               <label>
                 <input id="first_buy" type="checkbox" class="filled-in" />
-                <span>First time buyer</span>
+                <span>首次买大头菜</span>
               </label>
             </div>
           </div>
           <div class="col s6">
             <div class="input-field">
               <span>
-                Check this box if you bought from Daisy on your own island <b>for the first time ever</b>. If you bought from her on your own island in a previous week, leave this box unchecked.
-              </span>
+                如果你是<b>第一次</b>购买大头菜请勾选这里，否则请留空。
             </div>
           </div>
         </div>
@@ -94,68 +88,68 @@
     </div>
     <div class="row">
       <div class="col s2">
-        <h6>Monday</h6>
+        <h6>周一</h6>
         <div class="input-field col s6">
-          <label for="sell_2">AM</label>
+          <label for="sell_2">上午</label>
           <input type="number" id="sell_2">
         </div>
         <div class="input-field col s6">
-          <label for="sell_3">PM</label>
+          <label for="sell_3">下午</label>
           <input type="number" id="sell_3">
         </div>
       </div>
       <div class="col s2">
-        <h6>Tuesday</h6>
+        <h6>周二</h6>
         <div class="input-field col s6">
-          <label for="sell_4">AM</label>
+          <label for="sell_4">上午</label>
           <input type="number" id="sell_4">
         </div>
         <div class="input-field col s6">
-          <label for="sell_5">PM</label>
+          <label for="sell_5">下午</label>
           <input type="number" id="sell_5">
         </div>
       </div>
       <div class="col s2">
-        <h6>Wednesday</h6>
+        <h6>周三</h6>
         <div class="input-field col s6">
-          <label for="sell_6">AM</label>
+          <label for="sell_6">上午</label>
           <input type="number" id="sell_6">
         </div>
         <div class="input-field col s6">
-          <label for="sell_7">PM</label>
+          <label for="sell_7">下午</label>
           <input type="number" id="sell_7">
         </div>
       </div>
       <div class="col s2">
-        <h6>Thursday</h6>
+        <h6>周四</h6>
         <div class="input-field col s6">
-          <label for="sell_8">AM</label>
+          <label for="sell_8">上午</label>
           <input type="number" id="sell_8">
         </div>
         <div class="input-field col s6">
-          <label for="sell_9">PM</label>
+          <label for="sell_9">下午</label>
           <input type="number" id="sell_9">
         </div>
       </div>
       <div class="col s2">
-        <h6>Friday</h6>
+        <h6>周五</h6>
         <div class="input-field col s6">
-          <label for="sell_10">AM</label>
+          <label for="sell_10">上午</label>
           <input type="number" id="sell_10">
         </div>
         <div class="input-field col s6">
-          <label for="sell_11">PM</label>
+          <label for="sell_11">下午</label>
           <input type="number" id="sell_11">
         </div>
       </div>
       <div class="col s2">
-        <h6>Saturday</h6>
+        <h6>周六</h6>
         <div class="input-field col s6">
-          <label for="sell_12">AM</label>
+          <label for="sell_12">上午</label>
           <input type="number" id="sell_12">
         </div>
         <div class="input-field col s6">
-          <label for="sell_13">PM</label>
+          <label for="sell_13">下午</label>
           <input type="number" id="sell_13">
         </div>
       </div>
@@ -163,7 +157,7 @@
     <div class="row">
       <div class="col s12">
         <button id="reset" class="btn waves-effect waves-light" name="action">
-          Reset
+          重置
         </button>
       </div>
     </div>
@@ -171,43 +165,48 @@
     <div class="divider"></div>
 
     <div class="card-panel z-depth-0">
-        <span>Your turnip prices will be one of the following patterns. Each cell contains the minimum..maximum price for that half-day. If you don't have a pattern, something's gone wrong, sorry &#128531;. Check back next week!</span>
+        <span>你的大头菜价格可能遵循下方的一个走势，每个格子中包含了那个半天的【最大值..最小值】。如果方没有显示走势，可能是出现了错误，请下周再来看看。</span>
     </div>
 
     <div class="section">
       <table id="turnipTable" class="highlight">
         <thead>
           <tr>
-            <th rowspan="2">Pattern</th>
-            <th rowspan="2">% Chance</th>
-            <th rowspan="2">Sunday</th>
-            <th colspan="2">Monday</th>
-            <th colspan="2">Tuesday</th>
-            <th colspan="2">Wednesday</th>
-            <th colspan="2">Thursday</th>
-            <th colspan="2">Friday</th>
-            <th colspan="2">Saturday</th>
-            <th rowspan="2">Guaranteed Minimum</th>
-            <th rowspan="2">Potential Maximum</th>
+            <th rowspan="2">模式</th>
+            <th rowspan="2">概率</th>
+            <th rowspan="2">周日</th>
+            <th colspan="2">周一</th>
+            <th colspan="2">周二</th>
+            <th colspan="2">周三</th>
+            <th colspan="2">周四</th>
+            <th colspan="2">周五</th>
+            <th colspan="2">周六</th>
+            <th rowspan="2">最低</th>
+            <th rowspan="2">预计最高</th>
           </tr>
           <tr>
-            <th>AM</th>
-            <th>PM</th>
-            <th>AM</th>
-            <th>PM</th>
-            <th>AM</th>
-            <th>PM</th>
-            <th>AM</th>
-            <th>PM</th>
-            <th>AM</th>
-            <th>PM</th>
-            <th>AM</th>
-            <th>PM</th>
+            <th>上午</th>
+            <th>下午</th>
+            <th>上午</th>
+            <th>下午</th>
+            <th>上午</th>
+            <th>下午</th>
+            <th>上午</th>
+            <th>下午</th>
+            <th>上午</th>
+            <th>下午</th>
+            <th>上午</th>
+            <th>下午</th>
           </tr>
         </thead>
         <tbody id="output"></tbody>
       </table>
-    </div>
+    </div><br><br>
+    <span>
+      帮助验证本工具有效性，欢迎您进行反馈：<a href="https://docs.qq.com/form/fill/DTEFiZ1hBdEZ3TWxh?_w_tencentdocx_form=1">收集表</a>
+      <p />
+      欢迎使用大头菜交易平台：<a href="http://dodopass.21hz.top/trade/">http://dodopass.21hz.top/trade/</a>
+    </span>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
